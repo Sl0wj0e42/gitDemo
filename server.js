@@ -1,10 +1,13 @@
-let http = require("http");
-let port = 9000;
+let express = require("express");
+let port = 1082;
 
-let server = http.createServer(function(request, response) {
+app = express();
+
+app.get("/",
+    function(request, response) {
     response.end("Hello World from Node");
 });
 
-server.listen(port, function() {
+app.listen(port, function() {
     console.log("Server listining on port " + port);
 });
